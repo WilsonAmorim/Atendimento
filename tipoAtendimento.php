@@ -72,20 +72,20 @@
 							</thead>
 							
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Em Andammento</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Em Andammento</th>
 																			
 								</tr>
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Pendente</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Pendente</td>
 								</tr>
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Encerrado</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Encerrado</th>
 								</tr>
 								
 							

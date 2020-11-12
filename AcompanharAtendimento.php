@@ -42,47 +42,56 @@
 						<div class="clear"></div>
 						<table border=1 >
 							<thead>
-								<tr>
-									<th><img src="images/images.png"  /></th>
-									<th>Data Execução</th>
+								<tr >
+									
+									<th BGCOLOR=RED>Data Execução</th>
 									<th>Técnico</th>
+									<th>Tipo Atendimento</th>
 									<th>Status</th>
-									<th>Descrição</th>
+									<th>Observação</th>
 								</tr>
 							</thead>
-							
-								<tr>
-									<th>001</th>
-									<th>10/10/2020</th>
-									<th>Ari Toledo</th>
-									<th>Encerrado</th>
-									<th>Troca fio</th>
+								<?php 
+									// Recupera as informações  
+									// Conexão com o banco de dados
+										$cont=0;
+										$tabela = "";
 									
-								</tr>
-								<tr>
-									<th>002</th>
-									<th>10/10/2020</th>
-									<th>Ari Toledo</th>
-									<th>Em Andamento</th>
-									<th>Troca led</th>
-									
-								</tr>
-								<tr>
-									<th>003</th>
-									<th>10/10/2020</th>
-									<th>Ari Toledo</th>
-									<th>Encerrado</th>
-									<th>Troca de video</th>
-									
-								</tr>
-								<tr>
-									<th>004</th>
-									<th>10/10/2020</th>
-									<th>Ari Toledo</th>
-									<th>Pendente</th>
-									<th>Troca deimpressora</th>
-									
-								</tr>
+										$link = mysqli_connect("localhost", "root", "123atende", "atendimento");
+
+										/* check connection */
+										if (mysqli_connect_errno()) {
+											printf("Connect failed: %s\n", mysqli_connect_error());
+											exit();
+										}
+										$query = "SELECT atendimento.Id_Atendimento, atendimento.Id_TipoAtendimento, atendimento.Id_Usuario, atendimento.Id_Tecnico, atendimento.DataExecucao, 
+											atendimento.Observacao, atendimento.status, TipoAtendimento.descricao, usuario.Nome, tecnico.Nome FROM atendimento
+											INNER JOIN TipoAtendimento ON atendimento.Id_TipoAtendimento = TipoAtendimento.Id_TipoAtendimento 
+											INNER JOIN usuario ON atendimento.Id_Usuario = usuario.Id_Usuario 
+											INNER JOIN usuario tecnico ON atendimento.Id_Tecnico = tecnico.Id_Usuario";
+										
+										$result = mysqli_query($link, $query);
+										
+								if ($result) {
+									while ($row = mysqli_fetch_array($result)) {
+										$id = $row['Id_Usuario'];
+										//Saber quantos resgistros existem na tabela
+										$cont++;  
+										
+										$tabela .= "<tr> "
+										. " <td>{$row['DataExecucao']}</td> 
+											 <td>{$row['Nome']}</td> 
+											 <td>{$row['descricao']}</td> 
+											 <td>{$row['status']}</td>
+											 <td>{$row['Observacao']}</td> "
+										. "</tr> ";
+										
+								 }
+    
+								}
+								echo $tabela;
+								?>
+								
 							
 						</table>
 					</form>

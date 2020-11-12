@@ -68,6 +68,15 @@ CREATE TABLE `tipoatendimento` (
   `Descricao` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `tipoatendimento`
+--
+
+INSERT INTO `tipoatendimento` (`Id_TipoAtendimento`, `Descricao`) VALUES
+(1, 'Placa de Video'),
+(2, 'Placa de Rede'),
+(3, 'Botão Power');
+
 -- --------------------------------------------------------
 
 --

@@ -72,20 +72,20 @@
 							</thead>
 							
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Técnico</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Técnico</th>
 																			
 								</tr>
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Cliente</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Cliente</th>
 								</tr>
 								<tr>
-									<th><a href="#"><img src="images/editar.png"  /></a></th>
-									<th><a href="#"><img src="images/excluir.png"  /></a></th>
-									<th>Gestor</th>
+									<td><a href="#"><img src="images/editar.png"  /></a></td>
+									<td><a href="#"><img src="images/excluir.png"  /></a></td>
+									<td>Gestor</th>
 								</tr>
 								
 							

@@ -70,22 +70,7 @@
 					
 					
 				</div>
-			<?php 
-			// Recupera as informações  
-			// Conexão com o banco de dados
-				$cont=0;
-				$tabela = "Usuário";
 			
-				$link = mysqli_connect("localhost", "root", "123atende", "atendimento");
-
-				/* check connection */
-				if (mysqli_connect_errno()) {
-					printf("Connect failed: %s\n", mysqli_connect_error());
-					exit();
-				}
-				$query = "SELECT usuario.Id_Usuario, usuario.Nome, usuario.Email, usuario.Id_TipoUsuario, usuario.DataAtualiza,  tipousuario.Descrica FROM usuario, tipousuario  WHERE tipousuario.Id_TipoUsuario = usuario.Id_TipoUsuario";
-				$result = mysqli_query($link, $query);
-			?>
 			<div class="clear"></div>
 			<div id="footer">
 				<div id="footeri"></div>
@@ -105,18 +90,33 @@
 									<th>Email</th>
 								</tr>
 							</thead>
-							<?php if ($result) {
+							<?php 
+								// Recupera as informações  
+								// Conexão com o banco de dados
+									$cont=0;
+									$tabela = "Usuário";
+								
+									$link = mysqli_connect("localhost", "root", "123atende", "atendimento");
+
+									/* check connection */
+									if (mysqli_connect_errno()) {
+										printf("Connect failed: %s\n", mysqli_connect_error());
+										exit();
+									}
+									$query = "SELECT usuario.Id_Usuario, usuario.Nome, usuario.Email, usuario.Id_TipoUsuario, usuario.DataAtualiza,  tipousuario.Descrica FROM usuario, tipousuario  WHERE tipousuario.Id_TipoUsuario = usuario.Id_TipoUsuario";
+									$result = mysqli_query($link, $query);
+								if ($result) {
 									while ($row = mysqli_fetch_array($result)) {
 										$id = $row['Id_Usuario'];
 										//Saber quantos resgistros existem na tabela
 										$cont++;  
 										
 										$tabela .= "<tr> "
-										. " <th><a href='EditarUsuario.php?id={$row['Id_Usuario']}&act=up'><img src='images/editar.png'  /></a></th> 
-											 <th><a href='SalvaUsuario.php?id={$row['Id_Usuario']}&act=ex'><img src='images/excluir.png'  /></a></th> 
-											 <th>{$row['Descrica']}</th> 
-											 <th>{$row['Nome']}</th> 
-											 <th>{$row['Email']}</th> "
+										. " <td><a href='EditarUsuario.php?id={$row['Id_Usuario']}&act=up'><img src='images/editar.png'  /></a></th> 
+											 <td><a href='SalvaUsuario.php?id={$row['Id_Usuario']}&act=ex'><img src='images/excluir.png'  /></a></th> 
+											 <td>{$row['Descrica']}</th> 
+											 <td>{$row['Nome']}</th> 
+											 <td>{$row['Email']}</th> "
 										. "</tr> ";
 										
 								 }
